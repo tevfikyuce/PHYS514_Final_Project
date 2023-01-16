@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     11877,        328]
-NotebookOptionsPosition[      9953,        291]
-NotebookOutlinePosition[     10296,        306]
-CellTagsIndexPosition[     10253,        303]
+NotebookDataLength[     13680,        383]
+NotebookOptionsPosition[     11438,        341]
+NotebookOutlinePosition[     11782,        356]
+CellTagsIndexPosition[     11739,        353]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -282,6 +282,56 @@ Cell[BoxData[
  CellLabel->"Out[5]=",ExpressionUUID->"83cf25f0-af45-4028-b7c4-fb830ffc8492"]
 }, Open  ]],
 
+Cell["\<\
+Einstein Part E -- Solution of part of TOV for outside of the Star\
+\>", "Text",
+ CellChangeTimes->{{3.882868667129322*^9, 
+  3.882868683830467*^9}},ExpressionUUID->"ee6d5d46-5249-4166-8da3-\
+a312a5cc43e9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"v", "'"}], "[", "r", "]"}], "\[Equal]", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"2", "*", "M"}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"r", "*", 
+       RowBox[{"(", 
+        RowBox[{"r", "-", 
+         RowBox[{"2", "*", "M"}]}], ")"}]}], ")"}]}]}], ",", 
+   RowBox[{"v", "[", "r", "]"}], ",", "r"}], "]"}]], "Input",
+ CellChangeTimes->{3.8828686954755836`*^9},
+ CellLabel->"In[28]:=",ExpressionUUID->"f0578db8-6e51-4711-bfa8-ead9e7f078a0"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"v", "[", "r", "]"}], "\[Rule]", 
+    RowBox[{
+     RowBox[{"C", "[", "1", "]"}], "-", 
+     RowBox[{"2", " ", "M", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"Log", "[", "r", "]"}], 
+         RowBox[{"2", " ", "M"}]], "-", 
+        FractionBox[
+         RowBox[{"Log", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "2"}], " ", "M"}], "+", "r"}], "]"}], 
+         RowBox[{"2", " ", "M"}]]}], ")"}]}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.8828686965727053`*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"a030b3fb-a3a2-488b-aba0-8b114abd33d5"]
+}, Open  ]],
+
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.882530755161908*^9, 
   3.8825307574804935`*^9}},ExpressionUUID->"7d699e8f-1b02-472a-bd9c-\
@@ -289,8 +339,8 @@ Cell[BoxData[""], "Input",
 
 Cell["", "Text",ExpressionUUID->"c25e40f3-91b9-48c1-8585-131da52021ee"]
 },
-WindowSize->{993, 628},
-WindowMargins->{{Automatic, 74}, {-81, Automatic}},
+WindowSize->{993, 620},
+WindowMargins->{{Automatic, 93}, {-183, Automatic}},
 FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
@@ -326,10 +376,15 @@ Cell[6775, 193, 762, 21, 58, "Output",ExpressionUUID->"68610f54-0bd4-4ae4-847e-d
 Cell[7552, 217, 223, 5, 34, "Text",ExpressionUUID->"912da262-5aa3-43c7-8d32-58616313c466"],
 Cell[CellGroupData[{
 Cell[7800, 226, 812, 21, 28, "Input",ExpressionUUID->"ee7ab4bc-dfe9-4900-9c28-208607950e4a"],
-Cell[8615, 249, 1091, 32, 89, "Output",ExpressionUUID->"83cf25f0-af45-4028-b7c4-fb830ffc8492"]
+Cell[8615, 249, 1091, 32, 56, "Output",ExpressionUUID->"83cf25f0-af45-4028-b7c4-fb830ffc8492"]
 }, Open  ]],
-Cell[9721, 284, 154, 3, 28, "Input",ExpressionUUID->"7d699e8f-1b02-472a-bd9c-9ae4a7331fa6"],
-Cell[9878, 289, 71, 0, 34, "Text",ExpressionUUID->"c25e40f3-91b9-48c1-8585-131da52021ee"]
+Cell[9721, 284, 216, 5, 34, "Text",ExpressionUUID->"ee6d5d46-5249-4166-8da3-a312a5cc43e9"],
+Cell[CellGroupData[{
+Cell[9962, 293, 544, 16, 28, "Input",ExpressionUUID->"f0578db8-6e51-4711-bfa8-ead9e7f078a0"],
+Cell[10509, 311, 682, 20, 57, "Output",ExpressionUUID->"a030b3fb-a3a2-488b-aba0-8b114abd33d5"]
+}, Open  ]],
+Cell[11206, 334, 154, 3, 28, "Input",ExpressionUUID->"7d699e8f-1b02-472a-bd9c-9ae4a7331fa6"],
+Cell[11363, 339, 71, 0, 34, "Text",ExpressionUUID->"c25e40f3-91b9-48c1-8585-131da52021ee"]
 }
 ]
 *)
