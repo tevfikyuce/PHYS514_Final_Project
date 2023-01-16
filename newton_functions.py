@@ -26,7 +26,7 @@ def lane_emden_solve(n, xi_f=20):
         if t==0:
             f[1] = 0
         else:
-            f[1] = -np.power(y[0], n) - (2/t) * y[1]
+            f[1] = -np.float_power(y[0], n) - (2/t) * y[1]
         return f
 
     #Calling solver
@@ -43,22 +43,22 @@ def lane_emden_solve(n, xi_f=20):
 #Function that calculates (R,M) pair for given rho_c and D
 def calculate_R_M(rho_c, D, q, K_star):
     #Parameters
-    C = (5 * K_star * np.power(D, 5/q)) / 8
+    C = (5 * K_star * np.float_power(D, 5/q)) / 8
     max_step = 1e5
 
     #Function to be used in IVP solution (RHS of mass-density ODE)
     def f_rhs(t, y):
         rhs = np.zeros(len(y)) #Initialize RHS to zero
 
-        x = np.power(y[1]/D, 1/q) #Calculate x
-        df_dx = (8*C*np.power(x, 4))/(np.sqrt(np.power(x,2) + 1)) #Calculate dP/dx
+        x = np.float_power(y[1]/D, 1/q) #Calculate x
+        df_dx = (8*C*np.float_power(x, 4))/(np.sqrt(np.float_power(x,2) + 1)) #Calculate dP/dx
 
 
-        rhs[0] = 4*np.pi*np.power(t, 2) * y[1]
+        rhs[0] = 4*np.pi*np.float_power(t, 2) * y[1]
         if t == 0:
             rhs[1] = 0
         else:
-            rhs[1] = (1/df_dx)*q*D*np.power(y[1]/D, -(1/q)+1) * (-constants.gravitational_constant*y[0]*y[1]/np.power(t, 2))
+            rhs[1] = (1/df_dx)*q*D*np.float_power(y[1]/D, -(1/q)+1) * (-constants.gravitational_constant*y[0]*y[1]/np.float_power(t, 2))
         
         return rhs
 
@@ -112,7 +112,7 @@ def find_D(radius_arr, mass_arr, rho_c_initial, D_initial, N_samples, q, K_star)
         spline = CubicSpline(x=R_vals, y=M_vals)
 
         #Calculate Error
-        err = np.sqrt( np.mean(np.power(mass_arr - spline(radius_arr), 2)) ) / solar_mass
+        err = np.sqrt( np.mean(np.float_power(mass_arr - spline(radius_arr), 2)) ) / solar_mass
 
         print('ln(D) = ' + str(ln_D) + '  Err = ' + str(err))
 

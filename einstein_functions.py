@@ -12,9 +12,8 @@ solar_mass = 1.98847e30 #kg
 earth_radius = 6.3781e6 #m
 
 #This function solves TOV equation for given central pressure and return R and M
-def solve_TOV(p_c, R_f=50):
+def solve_TOV(p_c, K_NS = 100, R_f=50):
     #Constant Parameters
-    K_NS = 100
     pressure_limit = 1e-8
 
     #Calculates RHS of TOV equation
@@ -45,9 +44,8 @@ def solve_TOV(p_c, R_f=50):
         return result.t[-1], result.y[0,-1]
 
 #This function solves TOV equation with baryonic mass for given central pressure and return R and M
-def solve_TOV_mp(p_c, R_f=50):
+def solve_TOV_mp(p_c, K_NS = 100, R_f=50):
     #Constant Parameters
-    K_NS = 100
     pressure_limit = 1e-8
 
     #Calculates RHS of TOV equation
